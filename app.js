@@ -24,12 +24,13 @@ nextSlide.addEventListener("click", () => {
 
 backSlide = document.querySelector(".back");
 backSlide.addEventListener("click", () => {
-  if (currSlide === maxSlide) {
-    currSlide = 0;
+  if (currSlide === 0) {
+    curSlide = maxSlide;
   } else {
     currSlide--;
   }
   slides.forEach((slide, index) => {
     slide.style.transform = `translateX(${100 * (index - currSlide)}%)`;
+    console.log(currSlide, index);
   })
 })
